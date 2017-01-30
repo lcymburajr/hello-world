@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 echo "install software-properties-common"
-sudo apt-get install software-properties-common
+apt-get install software-properties-common
 
 echo "install ansible repository"
-sudo add-apt-repository ppa:ansible/ansible
+add-apt-repository ppa:ansible/ansible
 
 echo "update"
-sudo apt-get update
+apt-get update
 
 echo "install ansible"
-sudo apt-get install ansible -y
+apt-get install ansible -y
