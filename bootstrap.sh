@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Install software-properties-common"
+echo "install software-properties-common"
 sudo apt-get install software-properties-common
 
 echo "install ansible repository"
