@@ -1,12 +1,4 @@
 ---
-- name: get kernal
-  command: uname -r
-  register: command_output
-
-- name: set kernal
-  set_fact:
-    kernal: "{{command_output.stdout}}"
-
 - name: get ubuntu codename
   command: lsb_release -cs
   register: command_output
