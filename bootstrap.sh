@@ -11,3 +11,8 @@ apt-get update
 
 echo "install ansible"
 apt-get install ansible -y
+
+cd /vagrant
+
+echo "ansible playbook"
+ansible-playbook playbook.yml --inventory-file=inventory.ini --connection=local
