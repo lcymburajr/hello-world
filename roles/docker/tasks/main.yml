@@ -1,20 +1,23 @@
 ---
-- name: get ubuntu codename
+- name: Get Ubuntu codename
   command: lsb_release -cs
   register: command_output
 
-- name: set ubuntu codename
+- name: Set Ubuntu codename
   set_fact:
     lsb_release: "{{command_output.stdout}}"
 
-- name: add docker’s official GPG key
+- name: Add Docker’s official GPG key
   apt_key:
     url: https://yum.dockerproject.org/gpg
 
-- name: add docker repository
+- name: Add Docker repository
   apt_repository:
     repo: deb http://apt.dockerproject.org/repo/ ubuntu-{{ lsb_release }} main
 
-- name: install docker
+- name: Install Docker
   become: yes
   apt: name=docker-engine state=latest
+
+- name: Install Nginx into Docker
+  command: docker run --name webserver -p 80:80 -d -v /vagrant/html:/usr/share/nginx/html nginx
