@@ -7,6 +7,22 @@
   set_fact:
     lsb_release: "{{command_output.stdout}}"
 
+- name: Get kernel name
+  command: uname -s
+  register: command_output
+
+- name: Set kernel name
+  set_fact:
+    kernel: "{{command_output.stdout}}"
+
+- name: Get machine
+  command: uname -m
+  register: command_output
+
+- name: Set machine
+  set_fact:
+    machine: "{{command_output.stdout}}"
+
 - name: Add Docker’s official GPG key
   apt_key:
     url: https://yum.dockerproject.org/gpg
@@ -19,8 +35,14 @@
   become: yes
   apt: name=docker-engine state=latest
 
-- name: Build Dockerfile
-  command: docker build -t mynginx:latest .
+- name: Install docker compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.10.0/docker-compose-{{ kernel }}-{{ machine }}
+    dest: /usr/local/bin/docker-compose
+    mode: 0755
 
-- name: Start Nginx in Docker
-  command: docker run --name webserver -d -p 80:80 mynginx
+#- name: Build Dockerfile
+#  command: docker build -t mynginx:latest .
+#
+#- name: Start Nginx in Docker
+#  command: docker run --name webserver -d -p 80:80 mynginx
