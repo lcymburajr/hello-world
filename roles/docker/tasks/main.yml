@@ -19,5 +19,8 @@
   become: yes
   apt: name=docker-engine state=latest
 
-- name: Install Nginx into Docker
-  command: docker run --name webserver -p 80:80 -d -v /vagrant/html:/usr/share/nginx/html nginx
+- name: Build Dockerfile
+  command: docker build -t mynginx:latest .
+
+- name: Start Nginx in Docker
+  command: docker run --name webserver -d -p 80:80 mynginx
