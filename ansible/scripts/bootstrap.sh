@@ -14,5 +14,8 @@ apt-get install ansible -y
 
 cd /vagrant
 
+echo "install node"
+ansible-galaxy install geerlingguy.nodejs
+
 echo "ansible playbook"
-ansible-playbook playbook.yml --inventory-file=inventory.ini --connection=local
+ansible-playbook ansible/playbook.yml --inventory-file=inventory/inventory.ini --connection=local

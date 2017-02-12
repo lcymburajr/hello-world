@@ -23,6 +23,7 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network "forwarded_port", guest: 80, host: 4500
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -67,7 +68,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" do |s|
       s.privileged = true,
       s.keep_color = true,
-      s.path = "bootstrap.sh"
+      s.path = "ansible/scripts/bootstrap.sh"
   end
 
 end

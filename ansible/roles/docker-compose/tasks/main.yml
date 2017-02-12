@@ -40,9 +40,3 @@
     url: https://github.com/docker/compose/releases/download/1.10.0/docker-compose-{{ kernel }}-{{ machine }}
     dest: /usr/local/bin/docker-compose
     mode: 0755
-
-#- name: Build Dockerfile
-#  command: docker build -t mynginx:latest .
-#
-#- name: Start Nginx in Docker
-#  command: docker run --name webserver -d -p 80:80 mynginx
