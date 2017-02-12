@@ -1,0 +1,22 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "hello world deploy process",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcymburajr/hello-world.git"
+  },
+  "author": "Lawrence Cymbura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lcymburajr/hello-world/issues"
+  },
+  "homepage": "https://github.com/lcymburajr/hello-world#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}

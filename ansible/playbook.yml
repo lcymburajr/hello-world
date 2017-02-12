@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+
+  roles:
+  - { role: base }
+  - { role: geerlingguy.nodejs }
+  - { role: docker-compose }
