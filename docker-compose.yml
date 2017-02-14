@@ -1,0 +1,22 @@
+version: '2'
+services:
+  nginx:
+      build: ./nginx
+      links:
+          - node1:app
+          - node2:app
+          - node3:app
+      ports:
+          - "80:80"
+  node1:
+      build: ./app
+      ports:
+          - "3000"
+  node2:
+      build: ./app
+      ports:
+          - "3000"
+  node3:
+      build: ./app
+      ports:
+          - "3000"
