@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/lcymburajr/hello-world#readme",
   "dependencies": {
+    "body-parser": "~1.0.1",
     "express": "^4.14.1",
-    "nodemon": "^1.11.0",
-    "mongoose": "~3.6.13",
-    "body-parser": "~1.0.1"
+    "mongoose": "^4.8.2",
+    "nodemon": "^1.11.0"
   }
 }
