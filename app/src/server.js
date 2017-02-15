@@ -112,7 +112,7 @@ app.listen(port);
 console.log('Magic happens on port ' + port);
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://admin:test1234@ds153239.mlab.com:53239/api'); // connect to our database
+mongoose.connect(process.env.MONGODB_URI); // connect to our database
 
 app.use('/', express.static(path.resolve('html')))
 app.use('/success', express.static(path.resolve('html/success.html')))
