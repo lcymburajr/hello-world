@@ -3,3 +3,8 @@
   apt: name={{ item }} state=latest
   with_items:
      - vim
+     - curl
+     - build-essential
+     - git
+     - python-setuptools
+     - ruby
