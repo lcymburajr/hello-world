@@ -7,5 +7,5 @@ brew cask install virtualbox
 brew cask install vagrant
 brew cask install vagrant-hostmanager
 
-# Install WebStorm
+# Install WebStorm test
 brew cask install webstorm
